@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahyadri College of Engineering and Management - CSE</title>
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #0284c7;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0284c7;
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 100px 8% 80px 8%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #38bdf8;
+            font-weight: 500;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Layouts */
+        .section {
+            margin-bottom: 60px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #0f172a;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #0284c7;
+            border-radius: 2px;
+        }
+
+        /* Department Overview Layout */
+        .overview-grid {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .overview-text {
+            flex: 1;
+            font-size: 16px;
+            color: #475569;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 280px;
+        }
+
+        .badge {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .badge h4 {
+            color: #166534;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .badge p {
+            color: #14532d;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Vision & Mission Split Grid */
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .vision-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #7dd3fc;
+        }
+
+        .vision-box h3 {
+            color: #0369a1;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .vision-box p {
+            color: #0c4a6e;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Mission List Styling */
+        .mission-box {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .mission-box h3 {
+            color: #0f172a;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .mission-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mission-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .icon-wrapper {
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0284c7;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .mission-text {
+            color: #475569;
+            font-size: 15px;
+            padding-top: 4px;
+        }
+
+        /* Footer Element */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+            border-top: 4px solid #0284c7;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        .credit {
+            margin-top: 10px;
+            color: #38bdf8;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .vm-grid {
+                grid-template-columns: 1fr;
+            }
+            .overview-grid {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .badge-container {
+                width: 100%;
+            }
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Sahyadri<span>CSE</span></div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#vision-mission">Vision & Mission</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Header Banner -->
+    <header class="hero">
+        <h1>Sahyadri College of Engineering & Management</h1>
+        <p>Department of Computer Science & Engineering</p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Department Overview Section -->
+        <section class="section" id="overview">
+            <h2 class="section-title">Department Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p>The Department of Computer Science & Engineering was started in the year 2007 with a student intake of 60 to cater to the needs of software industries. Further, the intake was increased to 120 in the year 2009 and subsequently to 180, and 240 in the year 2014 and 2022 respectively.</p>
+                </div>
+                <div class="badge-container">
+                    <div class="badge">
+                        <h4>Accreditation Status</h4>
+                        <p>Accredited by NBA for 3 years (up to 2026)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision and Mission Section -->
+        <div class="vm-grid" id="vision-mission">
+           
+            <!-- Our Vision -->
+            <section class="vision-box">
+                <h3>Our Vision</h3>
+                <p>To be a globally recognized center for imparting quality technical education through innovative research and incubation with moral values in the field of computer science and engineering.</p>
+            </section>
+
+            <!-- Our Mission -->
+            <section class="section mission-box">
+                <h3>Our Mission</h3>
+                <ul class="mission-list">
+                    <li class="mission-item">
+                        <div class="icon-wrapper">📖</div>
+                        <div class="mission-text">Fostering effective education through internal collaboration with industries to address societal demands.</div>
+                    </li>
+                    <li class="mission-item">
+                        <div class="icon-wrapper">📖</div>
+                        <div class="mission-text">Empowering professionals with strong ethical values and leadership abilities.</div>
+                    </li>
+                    <li class="mission-item">
+                        <div class="icon-wrapper">📖</div>
+                        <div class="mission-text">Developing research and entrepreneurship culture in students and faculty to cultivate lifelong learning.</div>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer with Personal Credit -->
+    <footer>
+        <p>&copy; 2026 Sahyadri College of Engineering & Management. All rights reserved.</p>
+        <p class="credit">Created by Apeksha Rao</p>
+    </footer>
+
+</body>
+</html>
