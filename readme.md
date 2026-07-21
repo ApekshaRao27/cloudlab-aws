@@ -14,4 +14,14 @@ sudo systemctl restart httpd
 ```
 
 5. Ensure the EC2 security group allows inbound HTTP (port 80).
-6. Open the EC2 instance's Public DNS or Public IP in your browser to view the webpage.
+6. Open the EC2 instance's Public IP or Public DNS in your browser.
+
+## Live Demo
+
+The deployed webpage is available at:
+http://3.107.213.235/
+
+## Output
+*Screenshot of the deployed webpage:*
+
+![Webpage Screenshot](cloud.png)
